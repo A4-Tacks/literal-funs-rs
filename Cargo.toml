@@ -1,0 +1,16 @@
+[package]
+name = "literal-funs"
+version = "0.1.0"
+edition = "2021"
+
+description = "Some filters that ignore input values and return constant values"
+keywords = ["no_std", "filter"]
+categories = ["no-std", "no-std::no-alloc"]
+
+license = "MIT"
+readme = "README.md"
+
+authors = ["A4-Tacks <wdsjxhno1001@163.com>"]
+repository = "https://github.com/A4-Tacks/literal-funs-rs"
+
+[dependencies]
