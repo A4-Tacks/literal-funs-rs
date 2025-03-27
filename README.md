@@ -1,5 +1,7 @@
 Some filters that ignore input values and return constant values
 
+# Examples
+
 ```rust
 use literal_funs::*;
 
