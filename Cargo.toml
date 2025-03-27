@@ -1,6 +1,6 @@
 [package]
 name = "literal-funs"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 
 description = "Some filters that ignore input values and return constant values"
