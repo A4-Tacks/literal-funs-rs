@@ -10,6 +10,8 @@ macro_rules! gen_fun {
             $(#[$meta])*
             #[doc = concat!("Return a [`prim@", stringify!($name), "`] value\n")]
             ///
+            /// See the [module-level documentation](./index.html) for more
+            ///
             /// # Examples
             /// ```
             #[doc = concat!("use literal_funs::", stringify!($name), ";\n")]
@@ -21,8 +23,6 @@ macro_rules! gen_fun {
                 )*
             )]
             /// ```
-            ///
-            /// See the [module-level documentation](./index) for more
             pub fn $name<const L: $name>(_: impl Sized) -> $name {
                 L
             }
