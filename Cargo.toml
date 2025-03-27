@@ -1,10 +1,10 @@
 [package]
 name = "literal-funs"
-version = "0.1.3"
+version = "0.1.4"
 edition = "2021"
 
 description = "Some filters that ignore input values and return constant values"
-keywords = ["no_std", "filter"]
+keywords = ["no_std", "const", "literal", "filter"]
 categories = ["no-std", "no-std::no-alloc"]
 
 license = "MIT"
