@@ -4,11 +4,23 @@
 macro_rules! gen_fun {
     ($(
         $(#[$meta:meta])*
-        $name:ident;
+        $name:ident [$($value:expr),* $(,)?]
     )+) => {
         $(
             $(#[$meta])*
             #[doc = concat!("Return a [`prim@", stringify!($name), "`] value\n")]
+            ///
+            /// # Examples
+            /// ```
+            #[doc = concat!("use literal_funs::", stringify!($name), ";\n")]
+            #[doc = concat!(
+                $(
+                    "assert_eq!(",
+                    stringify!($name), "::<", stringify!($value), ">(()), ",
+                    stringify!($value), ");\n",
+                )*
+            )]
+            /// ```
             ///
             /// See the [module-level documentation](./index) for more
             pub fn $name<const L: $name>(_: impl Sized) -> $name {
@@ -19,20 +31,20 @@ macro_rules! gen_fun {
 }
 
 gen_fun! {
-    bool;
-    char;
-    i8;
-    i16;
-    i32;
-    i64;
-    i128;
-    isize;
-    u8;
-    u16;
-    u32;
-    u64;
-    u128;
-    usize;
+    bool    [true, false]
+    char    ['a', '\0', '你', ' ']
+    i8      [-5, 0, 123]
+    i16     [-5, 0, 123]
+    i32     [-5, 0, 123]
+    i64     [-5, 0, 123]
+    i128    [-5, 0, 123]
+    isize   [-5, 0, 123]
+    u8      [0, 123]
+    u16     [0, 123]
+    u32     [0, 123]
+    u64     [0, 123]
+    u128    [0, 123]
+    usize   [0, 123]
 }
 
 #[cfg(test)]
